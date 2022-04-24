@@ -22,7 +22,6 @@ done
 
 
 subMenuCloudBuilder () {
-    local PS3 = 'Please select the destinations service':
-    local options = ("")
-
+    #local PS3 = 'Please select the destinations service':
+   # local options = ("")
 }
