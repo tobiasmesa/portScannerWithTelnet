@@ -1,5 +1,5 @@
 PS3='Please select source service: '
-options=("Cloud Builder" "Option 2" "Option 3" "Quit")
+options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
