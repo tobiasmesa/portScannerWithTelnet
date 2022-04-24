@@ -4,7 +4,7 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Cloud Builder")
-            echo "you chose choice 1"
+            subMenuCloudBuilder
             ;;
         "SDDC Manager")
             echo "you chose choice 2"
