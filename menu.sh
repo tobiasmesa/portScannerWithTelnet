@@ -37,7 +37,7 @@ subMenuCloudBuilder () {
                 echo "you chose sub item 2"
                 ;;            
             "Back")
-                return
+                menu
                 ;;
             *) echo "invalid option $REPLY";;
         esac
@@ -60,7 +60,7 @@ do
             echo "you chose choice $REPLY which is $opt"
             ;;
         "Quit")
-            menu
+            break;
             ;;
         *) echo "invalid option $REPLY";;
     esac
