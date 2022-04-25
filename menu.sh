@@ -138,6 +138,35 @@ subMenuSDDCManager () {
     done
 }
 
+subMenuAdminManagmentNet () {
+    clear
+    local PS3='Please select the destinations service: '
+    local options=("SDDC Manager" "Cloud Builder" "Platform Service Controllers for the Management/Workload Domains" "vCenter Server for the Management Domain")
+    local opt
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Cloud Builder")
+                echo "you chose sub item 1"
+                ;;
+            "SDDC Manager")
+                echo "you chose sub item 1"
+                ;;
+            "Platform Service Controllers for the Management/Workload Domains")
+                echo "you chose sub item 2"
+                ;;
+            "vCenter Server for the Management Domain")
+                echo "you chose sub item 2"
+                ;;
+            "Back")
+                menu
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+
 
 menu () {
 clear
@@ -153,7 +182,7 @@ do
             subMenuSDDCManager
             ;;
         "Administrative / Managment Networks")
-            echo "you chose choice $REPLY which is $opt"
+            subMenuAdminManagmentNet
             ;;
         "Quit")
             exit
