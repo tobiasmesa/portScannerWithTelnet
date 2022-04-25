@@ -1,5 +1,5 @@
 subMenuCloudBuilder () {
-    local PS3 = "Please select the destinations service: "
+    local PS3="Please select the destinations service: "
     local options=("DNS Server(s)" "ESXi Hosts" "ESXi Hosts for the Management Domain" "NSX Controllers (NSX-v) for the Management Domain" "NSX Edge Service Gateways (NSX-v) for the Management Domain" "NSX Edges Nodes for the Management Domain" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for the Management Domain" "NTP Server(s)" "Platform Service Controllers for the Management/Workload Domains" "SDDC Manager" "vCenter Server for the Management Domain" "Back")
     local opt
     select opt in "${options[@]}"
@@ -36,7 +36,7 @@ subMenuCloudBuilder () {
                 echo "you chose sub item 2"
                 ;;            
             "Go back")
-                return
+                break
                 ;;
             *) echo "invalid option $REPLY";;
         esac
