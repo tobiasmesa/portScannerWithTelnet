@@ -1,4 +1,5 @@
 subMenuCloudBuilder () {
+    clear
     local PS3='Please select the destinations service: '
     local options=("DNS Server(s)" "ESXi Hosts" "ESXi Hosts for the Management Domain" "NSX Controllers (NSX-v) for the Management Domain" "NSX Edge Service Gateways (NSX-v) for the Management Domain" "NSX Edges Nodes for the Management Domain" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for the Management Domain" "NTP Server(s)" "Platform Service Controllers for the Management/Workload Domains" "SDDC Manager" "vCenter Server for the Management Domain" "Back")
     local opt
@@ -43,7 +44,7 @@ subMenuCloudBuilder () {
     done
 }
 
-
+clear
 PS3='Please select source service: '
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
