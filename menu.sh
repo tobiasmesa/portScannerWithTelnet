@@ -43,6 +43,7 @@ subMenuCloudBuilder () {
         esac
     done
 }
+
 menu () {
 clear
 PS3='Please select source service: '
@@ -65,7 +66,6 @@ do
         *) echo "invalid option $REPLY";;
     esac
 done
-
 }
 
 menu
