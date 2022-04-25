@@ -141,7 +141,7 @@ subMenuSDDCManager () {
 subMenuAdminManagmentNet () {
     clear
     local PS3='Please select the destinations service: '
-    local options=("SDDC Manager" "Cloud Builder" "Platform Service Controllers for the Management/Workload Domains" "vCenter Server for the Management Domain")
+    local options=("SDDC Manager" "Cloud Builder" "Platform Service Controllers for the Management/Workload Domains" "vCenter Server for the Management Domain" "Back")
     local opt
     select opt in "${options[@]}"
     do
