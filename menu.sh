@@ -35,8 +35,8 @@ subMenuCloudBuilder () {
             "vCenter Server for the Management Domain")
                 echo "you chose sub item 2"
                 ;;            
-            "Go back")
-                break
+            "Back")
+                return
                 ;;
             *) echo "invalid option $REPLY";;
         esac
