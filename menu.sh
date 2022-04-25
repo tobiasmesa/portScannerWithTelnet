@@ -60,7 +60,7 @@ do
             echo "you chose choice $REPLY which is $opt"
             ;;
         "Quit")
-            break
+            menu
             ;;
         *) echo "invalid option $REPLY";;
     esac
