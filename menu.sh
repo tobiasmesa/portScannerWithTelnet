@@ -150,7 +150,7 @@ do
             subMenuCloudBuilder
             ;;
         "SDDC Manager")
-            echo "you chose choice 2"
+            subMenuSDDCManager
             ;;
         "Administrative / Managment Networks")
             echo "you chose choice $REPLY which is $opt"
