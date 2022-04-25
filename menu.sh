@@ -43,7 +43,7 @@ subMenuCloudBuilder () {
         esac
     done
 }
-
+menu () {
 clear
 PS3='Please select source service: '
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
@@ -66,5 +66,6 @@ do
     esac
 done
 
+}
 
-
+menu
