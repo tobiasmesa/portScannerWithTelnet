@@ -1,26 +1,3 @@
-PS3='Please select source service: '
-options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Cloud Builder")
-            subMenuCloudBuilder
-            ;;
-        "SDDC Manager")
-            echo "you chose choice 2"
-            ;;
-        "Administrative / Managment Networks")
-            echo "you chose choice $REPLY which is $opt"
-            ;;
-        "Quit")
-            break
-            ;;
-        *) echo "invalid option $REPLY";;
-    esac
-done
-
-
-
 subMenuCloudBuilder () {
     local PS3 = 'Please select the destinations service':
     local options = ("DNS Server(s)" "ESXi Hosts" "ESXi Hosts for the Management Domain" "NSX Controllers (NSX-v) for the Management Domain" "NSX Edge Service Gateways (NSX-v) for the Management Domain" "NSX Edges Nodes for the Management Domain" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for the Management Domain" "NTP Server(s)" "Platform Service Controllers for the Management/Workload Domains" "SDDC Manager" "vCenter Server for the Management Domain" "Back")
@@ -65,3 +42,30 @@ subMenuCloudBuilder () {
         esac
     done
 }
+
+
+
+
+PS3='Please select source service: '
+options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Cloud Builder")
+            subMenuCloudBuilder
+            ;;
+        "SDDC Manager")
+            echo "you chose choice 2"
+            ;;
+        "Administrative / Managment Networks")
+            echo "you chose choice $REPLY which is $opt"
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
+
+
+
