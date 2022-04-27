@@ -167,7 +167,6 @@ subMenuAdminManagmentNet () {
 }
 
 
-
 menu () {
 clear
 PS3='Please select source service: '

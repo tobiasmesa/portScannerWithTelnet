@@ -2,7 +2,7 @@
 #!/usr/bin/env bash
 SERVER=google.com
 PORT=80
-</dev/tcp/$SERVER/$PORT
+</dev/udp/$SERVER/$PORT
 if [ "$?" -ne 0 ]; then
   echo "Connection to $SERVER on port $PORT failed"
   exit 1
