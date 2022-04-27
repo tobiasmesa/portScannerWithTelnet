@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+SERVER=google.com
+PORT=22
+
+</dev/tcp/$SERVER/$PORT 
+if [ "$?" -ne 0 ]; then
+  e	cho "Connection to $SERVER on port $PORT failed"
+  exit 0
+else
+  echo "Connection to $SERVER on port $PORT succeeded"
+  exit 1
+fi

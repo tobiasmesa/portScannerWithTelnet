@@ -1,16 +1,27 @@
+ if [[ -z $1 || -z $2 ]]; then
+    echo "Usage: $0 <host> <port, ports, or port-range>"
+    exit
+  fi
 
-#!/usr/bin/env bash
-SERVER=google.com
-PORT=(80 60 70)
+  host=$1
+  ports=()
+  case $2 in
+    *-*)
+      IFS=- read start end <<< "$2"
+      for ((port=start; port <= end; port++)); do
+        ports+=($port)
+      done
+      ;;
+    *,*)
+      IFS=, read -ra ports <<< "$2"
+      ;;
+    *)
+      ports+=($2)
+      ;;
+  esac
 
-for i in "${PORT[@]}" 
-do
-</dev/tcp/$SERVER/$i 
-if [ "$?" -ne 0 ]; then
-  echo "Connection to $SERVER on port $i failed"
-  exit 0
-else
-  echo "Connection to $SERVER on port $i succeeded"
-  exit 1
-fi
-done
+  for port in "${ports[@]}"; do
+    timeout 1 bash -c "echo >/dev/tcp/$host/$port" &&
+      echo "port $port is open" ||
+      echo "port $port is closed"
+  done
