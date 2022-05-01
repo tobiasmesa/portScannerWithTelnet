@@ -1,3 +1,13 @@
+connet () {
+	read -p "Ingrese la IP del host seleccionado: " host
+	read -p "Ingrese el USER: " user
+	read -p "Ingrese la PASSWORD: " pass
+	read -p "Ingrese ip del TARGET: " target
+	echo 'Intentando conectarse ...'
+	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target 80
+}
+
+
 subMenuCloudBuilder () {
     clear
     local PS3='Please select the destinations service: '
@@ -7,7 +17,7 @@ subMenuCloudBuilder () {
     do
         case $opt in
             "DNS Server(s)")
-                echo "you chose sub item 1"
+                connet
                 ;;
             "SDDC Manager")
                 echo "you chose sub item 1"
@@ -190,5 +200,8 @@ do
     esac
 done
 }
+
+
+
 
 menu

@@ -21,7 +21,7 @@
   esac
 
   for port in "${ports[@]}"; do
-    timeout 1 bash -c "echo >/dev/tcp/$host/$port" &&
-      echo "port $port is open" ||
-      echo "port $port is closed"
+    timeout 2 bash -c "echo >/dev/tcp/$host/$port" &&
+      echo "Port $port is open" ||
+      echo "Port $port is closed"
   done
