@@ -17,41 +17,41 @@ subMenuCloudBuilder () {
     do
         case $opt in
             "DNS Server(s)")
-                ports=(53,443)
-                connect
+                ports=(53)
                 ;;
             "SDDC Manager")
                 echo "you chose sub item 1"
                 ;;
             "ESXi Hosts")
-                echo "you chose sub item 2"
+               ports=(67,69)
                 ;;
             "ESXi Hosts for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Controllers (NSX-v) for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Edge Service Gateways (NSX-v) for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;     
             "NSX Managers for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NTP Server(s)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "Platform Service Controllers for the Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vCenter Server for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;            
             "Back")
                 menu
                 ;;
             *) echo "invalid option $REPLY";;
         esac
+        connect
     done
 }
 
@@ -70,76 +70,76 @@ subMenuSDDCManager () {
                 echo "you chose sub item 1"
                 ;;
             "Cloud Foundation Components")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "ESXi Hosts")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "ESXi Hosts for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "Federated SDDC Manager Instances")
-                echo "you chose sub item 2"
+               ports=()
                 ;;     
             "Microsoft Certificate Authority Web Enrollment Endpoint")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Controllers (NSX-v) for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Edges Nodes for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Manager (NSX-v or NSX-T) for Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NSX Manager (NSX-v) for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "NTP Server(s)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "Platform Service Controller for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "SFTP-based Backup Destination")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "vCenter Server for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "vCenter Servers for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "VMware Depot (Akamai CDN for depot.vmware.com)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vRealize Log Insight")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "vRealize Log Insight (Cluster VIP and Nodes)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
                 
             "vCenter Servers for Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vRealize Log Insight Cluster")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vRealize Operations Manager (Cluster and Nodes)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vRealize Suite Lifecycle Manager")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "Workspace ONE Access (Cluster and Nodes)")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "Back")
                 menu
@@ -164,10 +164,10 @@ subMenuAdminManagmentNet () {
                 echo "you chose sub item 1"
                 ;;
             "Platform Service Controllers for the Management/Workload Domains")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "vCenter Server for the Management Domain")
-                echo "you chose sub item 2"
+               ports=()
                 ;;
             "Back")
                 menu
