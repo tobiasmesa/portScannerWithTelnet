@@ -3,7 +3,7 @@ connect () {
 	read -p "Ingrese el USER: " user
 	read -p "Ingrese la PASSWORD: " pass
 	read -p "Ingrese ip del TARGET: " target
-	echo 'Intentando conectarse ...'
+	echo    'Intentando conectarse ...'
 	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}
 }
 
@@ -34,17 +34,23 @@ subMenuCloudBuilder () {
             "NSX Edge Service Gateways (NSX-v) for the Management Domain")
                ports=(443,22)
                 ;;     
+            "NSX Manager (NSX-v) for the Management Domain")
+               ports=(443,22)
+                ;;
             "NSX Managers for the Management Domain")
-               ports=()
+               ports=(443,22)
+                ;;
+            "NSX Edges Nodes for the Management Domain")
+               ports=(443,22)
                 ;;
             "NTP Server(s)")
-               ports=()
+               ports=(123)
                 ;;
             "Platform Service Controllers for the Management/Workload Domains")
-               ports=()
+               ports=(5480,22,443)
                 ;;
             "vCenter Server for the Management Domain")
-               ports=()
+               ports=(902,22,443,2014,5480)
                 ;;            
             "Back")
                 menu
@@ -64,13 +70,13 @@ subMenuSDDCManager () {
     do
         case $opt in
             "DNS Server(s)")
-                echo "you chose sub item 1"
+                ports=(53)
                 ;;
             "Administrative / Management Network(s)")
-                echo "you chose sub item 1"
+                ports=(443)
                 ;;
             "Cloud Foundation Components")
-               ports=()
+               echo "Hay que hacer ping"
                 ;;
             "ESXi Hosts")
                ports=()
@@ -158,10 +164,10 @@ subMenuAdminManagmentNet () {
     do
         case $opt in
             "Cloud Builder")
-                echo "you chose sub item 1"
+                ports=()
                 ;;
             "SDDC Manager")
-                echo "you chose sub item 1"
+                ports=()
                 ;;
             "Platform Service Controllers for the Management/Workload Domains")
                ports=()
