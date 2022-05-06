@@ -1,10 +1,10 @@
-connet () {
+connect () {
 	read -p "Ingrese la IP del host seleccionado: " host
 	read -p "Ingrese el USER: " user
 	read -p "Ingrese la PASSWORD: " pass
 	read -p "Ingrese ip del TARGET: " target
 	echo 'Intentando conectarse ...'
-	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target 80
+	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}
 }
 
 
@@ -17,7 +17,8 @@ subMenuCloudBuilder () {
     do
         case $opt in
             "DNS Server(s)")
-                connet
+                ports=(53,443)
+                connect
                 ;;
             "SDDC Manager")
                 echo "you chose sub item 1"
