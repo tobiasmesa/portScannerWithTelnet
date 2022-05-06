@@ -64,7 +64,7 @@ subMenuCloudBuilder () {
 subMenuSDDCManager () {
     clear
     local PS3='Please select the destinations service: '
-    local options=("Back" "Administrative / Management Network(s)" "Cloud Foundation Components" "DNS Server(s)" "ESXi Hosts" "ESXi Hosts for Management/Workload Domains" "Federated SDDC Manager Instances" "Microsoft Certificate Authority Web Enrollment Endpoint" "NSX Controllers (NSX-v) for Management/Workload Domains" "NSX Edges Nodes for Management/Workload Domains" "NSX Manager (NSX-v or NSX-T) for Workload Domains" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for Management Domain/Workload Domains" "NTP Server(s)" "Platform Service Controller for Management/Workload Domains" "SFTP-based Backup Destination" "vCenter Server for the Management Domain" "vCenter Servers for Management/Workload Domains" "VMware Depot (Akamai CDN for depot.vmware.com)" "vRealize Automation (Cluster and Nodes)" "vRealize Log Insight" "vRealize Log Insight (Cluster VIP and Nodes)" "vRealize Log Insight Cluster" "vRealize Operations Manager (Cluster and Nodes)" "vRealize Suite Lifecycle Manager" "Workspace ONE Access (Cluster and Nodes)")  
+    local options=("Back" "Administrative / Management Network(s)"  "Cloud Foundation Components" "DNS Server(s)" "ESXi Hosts" "ESXi Hosts for Management/Workload Domains" "Federated SDDC Manager Instances" "Microsoft Certificate Authority Web Enrollment Endpoint" "NSX Controllers (NSX-v) for Management/Workload Domains" "NSX Edges Nodes for Management/Workload Domains" "NSX Manager (NSX-v or NSX-T) for Workload Domains" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for Management Domain/Workload Domains" "NTP Server(s)""Platform Service Controller for Management/Workload Domains" "SFTP-based Backup Destination" "vCenter Server for the Management Domain" "vCenter Servers for Management/Workload Domains" "VMware Depot (Akamai CDN for depot.vmware.com)" "vRealize Automation (Cluster and Nodes)" "vRealize Log Insight" "vRealize Log Insight (Cluster VIP and Nodes)" "vRealize Log Insight Cluster" "vRealize Operations Manager (Cluster and Nodes)" "vRealize Suite Lifecycle Manager" "Workspace ONE Access (Cluster and Nodes)")  
     local opt
     select opt in "${options[@]}"
     do
@@ -79,35 +79,35 @@ subMenuSDDCManager () {
                echo "Hay que hacer ping"
                 ;;
             "ESXi Hosts")
-               ports=()
+               ports=(4045,32766,32767,2049,111)
                 ;;
             "ESXi Hosts for Management/Workload Domains")
-               ports=()
+               ports=(443,22)
                 ;;
             "Federated SDDC Manager Instances")
-               ports=()
+               ports=(443)
                 ;;     
             "Microsoft Certificate Authority Web Enrollment Endpoint")
-               ports=()
+               ports=(433)
                 ;;
             "NSX Controllers (NSX-v) for Management/Workload Domains")
-               ports=()
+               ports=(22,443)
                 ;;
             "NSX Edges Nodes for Management/Workload Domains")
-               ports=()
+               ports=(22,443)
                 ;;
             "NSX Manager (NSX-v or NSX-T) for Workload Domains")
-               ports=()
+               ports=(22,443)
                 ;;
             "NSX Manager (NSX-v) for the Management Domain")
-               ports=()
+               ports=(22,443)
                 ;;
             "NTP Server(s)")
-               ports=()
+               ports=(123)
                 ;;
                 
             "Platform Service Controller for Management/Workload Domains")
-               ports=()
+               ports=(22,443,7444)
                 ;;
                 
             "SFTP-based Backup Destination")
