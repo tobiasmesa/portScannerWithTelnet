@@ -20,19 +20,19 @@ subMenuCloudBuilder () {
                 ports=(53)
                 ;;
             "SDDC Manager")
-                echo "you chose sub item 1"
+                ports=(443,22)
                 ;;
             "ESXi Hosts")
                ports=(67,69)
                 ;;
             "ESXi Hosts for the Management Domain")
-               ports=()
+               ports=(902,22,68,443)
                 ;;
             "NSX Controllers (NSX-v) for the Management Domain")
-               ports=()
+               ports=(443,22)
                 ;;
             "NSX Edge Service Gateways (NSX-v) for the Management Domain")
-               ports=()
+               ports=(443,22)
                 ;;     
             "NSX Managers for the Management Domain")
                ports=()
