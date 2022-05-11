@@ -188,7 +188,7 @@ subMenuAdminManagmentNet () {
 
 menu () {
 clear
-PS3='Please select source service: '
+PS3='\nPlease select source service: '
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
 do
