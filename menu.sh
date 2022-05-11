@@ -193,7 +193,10 @@ echo ' '
 echo ' PORTSCANNER SCRIPT '
 echo ' '
 echo ' '
-PS3='Please select source service: '
+PS3='
+
+
+Please select source service: '
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
 do
