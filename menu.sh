@@ -190,7 +190,7 @@ menu () {
 clear
 echo ' '
 echo ' '
-echo ' '
+echo ' PORTSCANNER SCRIPT '
 echo ' '
 echo ' '
 PS3='Please select source service: '
