@@ -11,7 +11,7 @@ connect () {
 
 pingToMe () {
     read -p "Ingrese la IP del host seleccionado" host
-    ping $host
+    ping -c 3 $host
     
     sleep 7 
     menu
