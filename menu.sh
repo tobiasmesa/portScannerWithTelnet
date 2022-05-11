@@ -175,16 +175,16 @@ subMenuAdminManagmentNet () {
     do
         case $opt in
             "Cloud Builder")
-
+            pingToMe
                 ;;
             "SDDC Manager")
-                ports=()
+               pingToMe
                 ;;
             "Platform Service Controllers for the Management/Workload Domains")
-               ports=()
+              pingToMe
                 ;;
             "vCenter Server for the Management Domain")
-               ports=()
+               pingToMe
                 ;;
             "Back")
                 menu
