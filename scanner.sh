@@ -22,16 +22,15 @@
 
   for port in "${ports[@]}"; do
     timeout 2 bash -c "echo >/dev/tcp/$host/$port" &&
-      echo "Port TCP $port, open
+      echo ",Port TCP $port, open
       " ||
-      echo "Port TCP $port, closed
+      echo ",Port TCP $port, closed
       "
   done
 
   for port in "${ports[@]}"; do
     timeout 2 bash -c "echo >/dev/udp/$host/$port" &&
-      echo "Port UDP $port, open
+      echo ",Port UDP $port, open
       " ||
-      echo "Port UDP $port, closed
-      "
+      echo ",Port UDP $port, closed"
   done
