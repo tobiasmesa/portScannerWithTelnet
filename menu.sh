@@ -5,7 +5,7 @@ connect () {
 	read -p "Ingrese ip del TARGET: " target
 	echo    'Intentando conectarse ...'
 	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}
-    sleep 10
+    sleep 7
     menu
 }
 
@@ -188,15 +188,11 @@ subMenuAdminManagmentNet () {
 
 menu () {
 clear
-echo ' '
-echo ' '
-echo ' PORTSCANNER SCRIPT '
-echo ' '
-echo ' '
+
 PS3='
 
-
 Please select source service: '
+
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
 do
