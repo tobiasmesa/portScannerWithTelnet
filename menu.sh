@@ -11,9 +11,10 @@ connect () {
 
 pingToMe () {
     read -p "Ingrese la IP del host seleccionado" host
-    read -p "Ingrese el user" user
-    read -p "Ingrese la password" pass
-    sshpass -p $pass ssh $user@$host 'bash -s' < ./scannerICMP.sh
+    ping host
+    
+    sleep 7 
+    menu
 
 }
 
@@ -175,7 +176,7 @@ subMenuAdminManagmentNet () {
     do
         case $opt in
             "Cloud Builder")
-            pingToMe
+                pingToMe
                 ;;
             "SDDC Manager")
                pingToMe
