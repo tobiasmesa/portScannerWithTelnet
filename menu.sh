@@ -66,7 +66,7 @@ subMenuCloudBuilder () {
 subMenuSDDCManager () {
     clear
     local PS3='Please select the destinations service: '
-    local options=("Back" "Administrative / Management Network(s)"  "Cloud Foundation Components" "DNS Server(s)" "ESXi Hosts" "ESXi Hosts for Management/Workload Domains" "Federated SDDC Manager Instances" "Microsoft Certificate Authority Web Enrollment Endpoint" "NSX Controllers (NSX-v) for Management/Workload Domains" "NSX Edges Nodes for Management/Workload Domains" "NSX Manager (NSX-v or NSX-T) for Workload Domains" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for Management Domain/Workload Domains" "NTP Server(s)""Platform Service Controller for Management/Workload Domains" "SFTP-based Backup Destination" "vCenter Server for the Management Domain" "vCenter Servers for Management/Workload Domains" "VMware Depot (Akamai CDN for depot.vmware.com)" "vRealize Automation (Cluster and Nodes)" "vRealize Log Insight" "vRealize Log Insight (Cluster VIP and Nodes)" "vRealize Log Insight Cluster" "vRealize Operations Manager (Cluster and Nodes)" "vRealize Suite Lifecycle Manager" "Workspace ONE Access (Cluster and Nodes)")  
+    local options=("Back" "Administrative / Management Network(s)"  "Cloud Foundation Components" "DNS Server(s)" "ESXi Hosts" "ESXi Hosts for Management/Workload Domains" "Federated SDDC Manager Instances" "Microsoft Certificate Authority Web Enrollment Endpoint" "NSX Controllers (NSX-v) for Management/Workload Domains" "NSX Edges Nodes for Management/Workload Domains" "NSX Manager (NSX-v or NSX-T) for Workload Domains" "NSX Manager (NSX-v) for the Management Domain" "NSX Managers for Management Domain/Workload Domains" "NTP Server(s)""Platform Service Controller for Management/Workload Domains" "SFTP-based Backup Destination" "vCenter Server for the Management Domain" "vCenter Servers for Management/Workload Domains" "vCenter Servers for Workload Domains" "VMware Depot (Akamai CDN for depot.vmware.com)" "vRealize Automation (Cluster and Nodes)" "vRealize Log Insight" "vRealize Log Insight (Cluster VIP and Nodes)" "vRealize Log Insight Cluster" "vRealize Operations Manager (Cluster and Nodes)" "vRealize Suite Lifecycle Manager" "Workspace ONE Access (Cluster and Nodes)")  
     local opt
     select opt in "${options[@]}"
     do
@@ -113,41 +113,42 @@ subMenuSDDCManager () {
                 ;;
                 
             "SFTP-based Backup Destination")
-               ports=()
+               ports=(22)
                 ;;
                 
             "vCenter Server for the Management Domain")
-               ports=()
+               ports=(5480)
                 ;;
-                
+            "vCenter Servers for Workload Domains")
+               ports=(5480)
+                ;;
             "vCenter Servers for Management/Workload Domains")
-               ports=()
+               ports=(443,22)
                 ;;
             "VMware Depot (Akamai CDN for depot.vmware.com)")
-               ports=()
+               ports=(443)
                 ;;
             "vRealize Log Insight")
-               ports=()
-                ;;
-                
+               ports=(9543)
+                ;;       
             "vRealize Log Insight (Cluster VIP and Nodes)")
-               ports=()
+               ports=(443,22)
                 ;;
                 
-            "vCenter Servers for Management/Workload Domains")
-               ports=()
-                ;;
             "vRealize Log Insight Cluster")
-               ports=()
+               ports=(9543,443)
+                ;;
+             "vRealize Automation (Cluster and Nodes)")
+               ports=(443)
                 ;;
             "vRealize Operations Manager (Cluster and Nodes)")
-               ports=()
+               ports=(443)
                 ;;
             "vRealize Suite Lifecycle Manager")
-               ports=()
+               ports=(443,22)
                 ;;
             "Workspace ONE Access (Cluster and Nodes)")
-               ports=()
+               ports=(443,22)
                 ;;
             "Back")
                 menu
@@ -190,7 +191,6 @@ menu () {
 clear
 
 PS3='
-
 Please select source service: '
 
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
