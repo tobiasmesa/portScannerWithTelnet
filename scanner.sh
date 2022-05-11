@@ -19,18 +19,15 @@
       ports+=($2)
       ;;
   esac
-
+  echo 'PORT TCP, STATE,'
   for port in "${ports[@]}"; do
     timeout 2 bash -c "echo >/dev/tcp/$host/$port" &&
-      echo ",Port TCP $port, open
-      " ||
-      echo ",Port TCP $port, closed
-      "
+      echo "$port, open," ||
+      echo "$port, closed,"
   done
-
+echo 'PORT UDP, STATE,'
   for port in "${ports[@]}"; do
     timeout 2 bash -c "echo >/dev/udp/$host/$port" &&
-      echo ",Port UDP $port, open
-      " ||
-      echo ",Port UDP $port, closed"
+      echo "$port, open," ||
+      echo "$port, closed,"
   done
