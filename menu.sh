@@ -5,6 +5,7 @@ connect () {
 	read -p "Ingrese ip del TARGET: " target
 	echo    'Intentando conectarse ...'
 	sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}
+    sleep(20)
     menu
 }
 
