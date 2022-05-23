@@ -4,7 +4,7 @@ connect () {
 	read -p "Ingrese la PASSWORD: " pass
 	read -p "Ingrese ip del TARGET: " target
 	echo    'Intentando conectarse ...'
-sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}  | tr "\n" " " > file.csv
+    sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]} 
     sleep 7
     menu
 }
@@ -220,8 +220,5 @@ do
     esac
 done
 }
-
-
-
 
 menu
