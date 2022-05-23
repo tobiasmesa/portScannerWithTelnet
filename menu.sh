@@ -12,6 +12,7 @@ sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]}  |
 pingToMe () {
     read -p "Ingrese la IP del host seleccionado: " host
     ping -c 3 $host
+    sleep 4
     menu
 }
 
