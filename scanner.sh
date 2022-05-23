@@ -25,6 +25,7 @@
       echo "$port open" ||
       echo "$port closed"
   done
+  
 echo 'PORT UDP, STATE,'
   for port in "${ports[@]}"; do
     timeout 2 bash -c "echo >/dev/udp/$host/$port" &&

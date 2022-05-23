@@ -13,7 +13,6 @@ pingToMe () {
     read -p "Ingrese la IP del host seleccionado: " host
     ping -c 3 $host
     menu
-
 }
 
 
@@ -85,7 +84,7 @@ subMenuSDDCManager () {
                 ports=(443)
                 ;;
             "Cloud Foundation Components")
-               echo "Hay que hacer ping"
+               pingToMe
                 ;;
             "ESXi Hosts")
                ports=(4045,32766,32767,2049,111)
