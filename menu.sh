@@ -1,3 +1,5 @@
+##Connect: Connect to the Service to scan secondary's servers ports
+
 connect () {
 	read -p "Ingrese la IP del host seleccionado: " host
 	read -p "Ingrese el USER: " user
@@ -9,6 +11,7 @@ connect () {
     menu
 }
 
+##Some service needs to scan if they are working so they ping themselves
 pingToMe () {
     read -p "Ingrese la IP del host seleccionado: " host
     ping -c 3 $host
@@ -16,7 +19,7 @@ pingToMe () {
     menu
 }
 
-
+##Scan port of services for CloudBuilder
 subMenuCloudBuilder () {
     clear
     local PS3='Please select the destinations service: '
@@ -69,6 +72,7 @@ subMenuCloudBuilder () {
         connect
     done
 }
+##Scan port of services for SddcManager
 
 subMenuSDDCManager () {
     clear
@@ -164,6 +168,7 @@ subMenuSDDCManager () {
         esac
     done
 }
+##Scan port of services for Ping AdminManagmentNetwork Tools 
 
 subMenuAdminManagmentNet () {
     clear
@@ -193,12 +198,10 @@ subMenuAdminManagmentNet () {
     done
 }
 
-
+##Main menu, select option or service to scan the ports
 menu () {
 clear
-
-PS3='
-Please select source service: '
+PS3='Please select source service: '
 
 options=("Cloud Builder" "SDDC Manager" "Administrative / Managment Networks" "Quit")
 select opt in "${options[@]}"
@@ -221,4 +224,5 @@ do
 done
 }
 
+##Call menu to start the script
 menu
