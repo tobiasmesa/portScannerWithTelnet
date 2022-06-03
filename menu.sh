@@ -5,7 +5,7 @@ connect () {
 	read -p "Ingrese ip del TARGET: " target
 	echo    'Intentando conectarse ...'
     sshpass -p $pass ssh $user@$host 'bash -s' < ./scanner.sh $target ${ports[@]} 
-    sleep 7
+    
     menu
 }
 
@@ -114,15 +114,12 @@ subMenuSDDCManager () {
             "NTP Server(s)")
                ports=(123)
                 ;;
-                
             "Platform Service Controller for Management/Workload Domains")
                ports=(22,443,7444)
                 ;;
-                
             "SFTP-based Backup Destination")
                ports=(22)
                 ;;
-                
             "vCenter Server for the Management Domain")
                ports=(5480)
                 ;;
@@ -141,7 +138,6 @@ subMenuSDDCManager () {
             "vRealize Log Insight (Cluster VIP and Nodes)")
                ports=(443,22)
                 ;;
-                
             "vRealize Log Insight Cluster")
                ports=(9543,443)
                 ;;
@@ -195,7 +191,7 @@ subMenuAdminManagmentNet () {
 
 
 menu () {
-clear
+
 
 PS3='
 Please select source service: '
