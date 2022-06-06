@@ -29,8 +29,7 @@ Function port-scan-udp {
         }
       } catch {
         if ($Error[0].ToString() -match "failed to respond") {
-          # We haven't received any UDP data from the remote host in return
-          # Let's see if we can ICMP ping the remote host
+
           if ((Get-wmiobject win32_pingstatus -Filter "address = '$h' and Timeout=1000 and ResolveAddressNames=false").StatusCode -eq 0) {
             # We can ping the remote host, so we can assume that ICMP is not
             # filtered. And because we didn't receive ICMP port-unreachable before,
@@ -86,6 +85,11 @@ Function port-scan-tcp {
     }
   }
 
+function get-Ip 
+{
+  $a =  Read-Host "Enter the IP service: "
+  return $a
+}
 
 function Show-Menu {
     param (
@@ -130,20 +134,59 @@ function Show-SubMenuCM {
 do
  {
     Show-Menu
-    $selection = Read-Host "Please make a selection"
+    $selection = Read-Host "Please make a selection: "
     switch ($selection)
     {
     '1' {
         Show-SubMenuCM
-        $subselection = Read-Host "Please make a selection"
-        switch ($subselection)
-        {
-            
-        }
+        $subselection = Read-Host "Please make a selection: "
+          switch($subselection)
+          {
+            '1'{
+              $ip = get-Ip
+              $s += port-scan-tcp $ip 53,30,32
+            }
+            '2' {
+              $s += port-scan-tcp 10.10.60.20 3,20,12
+            }
+            '3' {
+
+            }
+            '4'{
+              Write-Host "AAAAAAAA" 
+             }
+             '5' {
+ 
+             }
+             '6' {
+ 
+             }
+             '7'{
+              Write-Host "AAAAAAAA" 
+             }
+             '8' {
+ 
+             }
+             '9' {
+ 
+             }
+             '10'{
+              Write-Host "AAAAAAAA" 
+             }
+             '11' {
+ 
+             }
+             '12' {
+ 
+             }
+
+          }
+
+
     } '2' {
     'You chose option #2'
     } '3' {
-      'You chose option #3'
+      $s | Out-File -FilePath .\Process.csv
     }
     }
     pause
